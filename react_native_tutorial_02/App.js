@@ -82,8 +82,9 @@ export default class App extends Component {
           style={{ width: 300, height: 300 }}
         />
         <View style={{ alignItems: 'center' }}>
-          <Description text='2016 Summer Vacation at Hong Kong' />
-          <Blink text="Viel Spaß!" />
+          <Text style={styles.red}>2016 Summer Vacation</Text> 
+          <Text style={styles.bigblue}>at Hong Kong</Text>
+          <Text style={[styles.bigblue, styles.red]}>Viel Spaß</Text>
         </View>
       </View>
     )
@@ -97,14 +98,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+  bigblue: {
+    color: 'blue',
+    fontWeight: 'bold',
+    fontSize: 30,
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
+  red: {
+    color: 'red',
   },
 });
