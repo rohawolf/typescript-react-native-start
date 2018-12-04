@@ -35,7 +35,8 @@ import {
   AppRegistry,
   Image,
   StyleSheet, 
-  Text, 
+  Text,
+  TextInput, 
   View 
 } from 'react-native';
 
@@ -69,6 +70,30 @@ class Blink extends Component {
   }
 }
 
+class Pizzamaker extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { text: '' };
+  }
+
+  _handleChange = (text) => this.setState({text})
+
+  render() {
+    return (
+      <View style={{ padding: 10 }}>
+        <TextInput
+          style={{ height: 40 }}
+          placeholder="Type here something!"
+          onChangeText={this._handleChange}
+        />
+        <Text style={{ padding: 10, fontSize: 42 }}>
+          {this.state.text.split(' ').map((word) => word && '🍕').join(' ')}
+        </Text>
+      </View>
+    )
+  }
+}
+
 export default class App extends Component {
   render() {
     const pic = {
@@ -97,10 +122,13 @@ export default class App extends Component {
 
         {/* Flex Dimensions boxes */}
         <View style={{ flexDirection: 'row' }}>
-          <View style={{ flex: 1, height: 150, backgroundColor: 'powderblue' }} />
-          <View style={{ flex: 2, height: 150, backgroundColor: 'skyblue' }} />
-          <View style={{ flex: 3, height: 150, backgroundColor: 'steelblue' }} />
+          <View style={{ flex: 1, height: 10, backgroundColor: 'powderblue' }} />
+          <View style={{ flex: 2, height: 10, backgroundColor: 'skyblue' }} />
+          <View style={{ flex: 3, height: 10, backgroundColor: 'steelblue' }} />
         </View>
+
+        {/* Pizzamaker */}
+        <Pizzamaker />
       </View>
     )
   }
