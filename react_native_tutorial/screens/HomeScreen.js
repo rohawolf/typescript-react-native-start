@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  ActivityIndicator,
   Image,
   Platform,
   ScrollView,
@@ -46,6 +47,11 @@ export default class HomeScreen extends React.Component {
             <Text style={styles.getStartedText}>
               테스트
             </Text>
+
+
+            <View style={styles.loadingContainer}>
+              <ActivityIndicator size="large" color="#eeeeee" />
+            </View>
           </View>
 
           <View style={styles.helpContainer}>
@@ -188,5 +194,10 @@ const styles = StyleSheet.create({
   helpLinkText: {
     fontSize: 14,
     color: '#2e78b7',
+  },
+  loadingContainer: {
+    marginTop: 15,
+    flex: 1,
+    justifyContent: 'center',
   },
 });
