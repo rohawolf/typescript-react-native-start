@@ -76,15 +76,30 @@ export default class App extends Component {
     };
     return (
       <View style={styles.container}>
+        {/* My Bio */}
         <Text>Hello world!</Text>
         <Image 
           source={pic}
-          style={{ width: 300, height: 300 }}
+          style={{ width: 200, height: 200 }}
         />
         <View style={{ alignItems: 'center' }}>
           <Text style={styles.red}>2016 Summer Vacation</Text> 
           <Text style={styles.bigblue}>at Hong Kong</Text>
-          <Text style={[styles.bigblue, styles.red]}>Viel Spaß</Text>
+          <Text style={[styles.bigblue, styles.red]}>Viel Spaß!</Text>
+        </View>
+
+        {/* Fixed Dimensions boxes */}
+        <View>
+          <View style={{ width: 15, height: 15, backgroundColor: 'powderblue' }} />
+          <View style={{ width: 30, height: 30, backgroundColor: 'skyblue' }} />
+          <View style={{ width: 45, height: 45, backgroundColor: 'steelblue' }} />
+        </View>
+
+        {/* Flex Dimensions boxes */}
+        <View style={{ flexDirection: 'row' }}>
+          <View style={{ flex: 1, height: 150, backgroundColor: 'powderblue' }} />
+          <View style={{ flex: 2, height: 150, backgroundColor: 'skyblue' }} />
+          <View style={{ flex: 3, height: 150, backgroundColor: 'steelblue' }} />
         </View>
       </View>
     )
@@ -106,4 +121,5 @@ const styles = StyleSheet.create({
   red: {
     color: 'red',
   },
+
 });
