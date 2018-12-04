@@ -32,7 +32,9 @@
 
 import React, { Component } from 'react';
 import { 
+  Alert,
   AppRegistry,
+  Button,
   Image,
   StyleSheet, 
   Text,
@@ -94,6 +96,28 @@ class Pizzamaker extends Component {
   }
 }
 
+class ButtonBasics extends Component {
+  _onPressButton = () => {
+    Alert.alert('You tapped the button!')
+  }
+
+  render() {
+    return (
+      <View style={styles.buttonContainer}>
+        <Button 
+          onPress={this._onPressButton}
+          title="Press me"
+        />
+        <Button 
+          onPress={this._onPressButton}
+          title="Press me"
+          color="#841584"
+        />
+      </View>
+    )
+  }
+}
+
 export default class App extends Component {
   render() {
     const pic = {
@@ -113,13 +137,14 @@ export default class App extends Component {
           <Text style={[styles.bigblue, styles.red]}>Viel Spaß!</Text>
         </View>
 
-        {/* Fixed Dimensions boxes */}
+        {/* Fixed Dimensions boxes 
         <View>
           <View style={{ width: 15, height: 15, backgroundColor: 'powderblue' }} />
           <View style={{ width: 30, height: 30, backgroundColor: 'skyblue' }} />
           <View style={{ width: 45, height: 45, backgroundColor: 'steelblue' }} />
         </View>
-
+        */}
+        
         {/* Flex Dimensions boxes */}
         <View style={{ flexDirection: 'row' }}>
           <View style={{ flex: 1, height: 10, backgroundColor: 'powderblue' }} />
@@ -127,8 +152,10 @@ export default class App extends Component {
           <View style={{ flex: 3, height: 10, backgroundColor: 'steelblue' }} />
         </View>
 
-        {/* Pizzamaker */}
-        <Pizzamaker />
+        {/* <Pizzamaker /> */}
+        {/* Buttons */}
+        <ButtonBasics />
+
       </View>
     )
   }
@@ -149,5 +176,9 @@ const styles = StyleSheet.create({
   red: {
     color: 'red',
   },
-
+  buttonContainer: {
+    margin: 20,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
 });
