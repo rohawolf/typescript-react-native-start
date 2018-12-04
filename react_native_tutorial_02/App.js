@@ -39,6 +39,16 @@ import {
   View 
 } from 'react-native';
 
+class Description extends Component {
+  render() {
+    return (
+      <View style={{ alignItems: 'center' }}>
+        <Text>{this.props.text}!</Text>
+      </View>
+    );
+  }
+}
+
 export default class App extends Component {
   render() {
     const pic = {
@@ -51,6 +61,9 @@ export default class App extends Component {
           source={pic}
           style={{ width: 300, height: 300 }}
         />
+        <View style={{ alignItems: 'center' }}>
+          <Description text='2016 Summer Vacation at Hong Kong' />
+        </View>
       </View>
     )
   }
