@@ -32,6 +32,8 @@
 
 import React, { Component } from 'react';
 import { 
+  AppRegistry,
+  Image,
   StyleSheet, 
   Text, 
   View 
@@ -39,9 +41,16 @@ import {
 
 export default class App extends Component {
   render() {
+    const pic = {
+      uri: 'https://avatars2.githubusercontent.com/u/38709589?s=460&v=4'
+    };
     return (
       <View style={styles.container}>
         <Text>Hello world!</Text>
+        <Image 
+          source={pic}
+          style={{ width: 300, height: 300 }}
+        />
       </View>
     )
   }
