@@ -49,6 +49,26 @@ class Description extends Component {
   }
 }
 
+class Blink extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isShowingText: true
+    };
+
+    // Toggle the state every second
+    setInterval(() => (
+      this.setState(prevState => (
+        { isShowingText: !prevState.isShowingText }
+      ))
+    ), 1000);
+  }
+
+  render() {
+    return this.state.isShowingText ? <Text>{this.props.text}</Text> : null;
+  }
+}
+
 export default class App extends Component {
   render() {
     const pic = {
@@ -63,6 +83,7 @@ export default class App extends Component {
         />
         <View style={{ alignItems: 'center' }}>
           <Description text='2016 Summer Vacation at Hong Kong' />
+          <Blink text="Viel Spaß!" />
         </View>
       </View>
     )
