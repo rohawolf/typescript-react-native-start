@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   AsyncStorage,
-  Button,
   FlatList,
   Keyboard,
   Platform,
@@ -9,8 +8,10 @@ import {
   StyleSheet,
   Text,
   TextInput,
+  TouchableOpacity,
   View,
 } from 'react-native';
+import { Icon } from 'expo';
 
 const isAndroid = Platform.OS === 'android';
 const _viewPadding = 10;
@@ -90,7 +91,14 @@ export default class ScheduleScreen extends React.Component {
         <Text style={styles.listItem}>
           {item.text}
         </Text>
-        <Button title="X" onPress={() => this._deleteTask(item.key)} />
+        <TouchableOpacity onPress={() => this._deleteTask(item.key)} >
+          <Icon.Ionicons 
+            name={isAndroid ? 'md-close' : 'ios-close'}
+            size={40}
+            style={{ margin: 5, marginRight: 15 }}
+            color="red"
+          />
+        </TouchableOpacity>
       </View>
       <View style={styles.hr} />
     </View>
