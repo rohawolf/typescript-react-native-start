@@ -19,6 +19,9 @@ export default class HomeScreen extends React.Component {
   };
 
   render() {
+    const pic = {
+      uri: 'https://avatars2.githubusercontent.com/u/38709589?s=460&v=4'
+    };
     return (
       <View style={styles.container}>
 
@@ -59,9 +62,10 @@ export default class HomeScreen extends React.Component {
               <Text style={styles.helpLinkText}>Help, it didn’t automatically reload!</Text>
             </TouchableOpacity>
           </View>
+
         </ScrollView>
 
-        {/* Tab info Container */}
+        {/* Tab info Container
         <View style={styles.tabBarInfoContainer}>
           <Text style={styles.tabBarInfoText}>This is a tab bar. You can edit it in:</Text>
 
@@ -69,7 +73,7 @@ export default class HomeScreen extends React.Component {
             <MonoText style={styles.codeHighlightText}>navigation/MainTabNavigator.js</MonoText>
           </View>
         </View>
-
+         */}
       </View>
     );
   }
@@ -199,5 +203,24 @@ const styles = StyleSheet.create({
     marginTop: 15,
     flex: 1,
     justifyContent: 'center',
+  },
+  bioContainer: {
+    marginTop: 5,
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  bigblue: {
+    color: 'blue',
+    fontWeight: 'bold',
+    fontSize: 30,
+  },
+  red: {
+    color: 'red',
+  },
+  buttonContainer: {
+    margin: 20,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
 });

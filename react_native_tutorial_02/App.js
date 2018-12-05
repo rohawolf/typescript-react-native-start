@@ -137,14 +137,13 @@ export default class App extends Component {
           <Text style={[styles.bigblue, styles.red]}>Viel Spaß!</Text>
         </View>
 
-        {/* Fixed Dimensions boxes 
+        {/* Fixed Dimensions boxes */}
         <View>
           <View style={{ width: 15, height: 15, backgroundColor: 'powderblue' }} />
           <View style={{ width: 30, height: 30, backgroundColor: 'skyblue' }} />
           <View style={{ width: 45, height: 45, backgroundColor: 'steelblue' }} />
         </View>
-        */}
-        
+
         {/* Flex Dimensions boxes */}
         <View style={{ flexDirection: 'row' }}>
           <View style={{ flex: 1, height: 10, backgroundColor: 'powderblue' }} />
@@ -155,7 +154,6 @@ export default class App extends Component {
         {/* <Pizzamaker /> */}
         {/* Buttons */}
         <ButtonBasics />
-
       </View>
     )
   }
